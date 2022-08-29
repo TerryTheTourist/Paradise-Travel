@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paradise Travel - Home</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.container {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+<!--Navigation Bar-->
+<div class="w3-bar w3-red">
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="destinations.html" class="w3-bar-item w3-button">Destinations</a>
+    <a href="book.html" class="w3-bar-item w3-button">Book</a>
+    <a href="about.html" class="w3-bar-item w3-button">About Us</a>
+</div>
+<!--Title-->
+<div class="w3-container w3-deep-orange">
+    <H1>Home</H1>
+</div>
+<!--Images to cycle-->
+<div class="w3-content w3-section" style="max-height:800px">
+   <div class="container">
+        <img class="myslides" src="Images/Beach.jpg" style="width:100%">
+        <img class="myslides" src="Images/Chairs.jpg" style="width:100%">
+        <img class="myslides" src="Images/Resort.png" style="width:100%">
+        <div class="center" style="color:white;">
+            <p style="font-weight:bold; font-size:25px; text-align:center;">Ready For Your Next Holiday?</p>
+            <a href="book.html" style="margin-left:35%; border-style:solid; border-width:2px; padding:5px 10px; text-decoration:none;">Book Now!</a>
+            <p style="font-weight:bold; font-size:25px; padding-top:50px;">Not Sure Where You Want To Go?</p>
+            <a href="destinations.html" style="margin-left:34%; border-style:solid; border-width:2px; padding:5px 10px; text-decoration:none;">Destinations</a>
+        </div>
+   </div>
+</div>
+<!--Javascript that cycles image every 5 seconds-->
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("myslides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 5000);
+}
+</script>
+<!--Footer-->
+<footer class="w3-container w3-red">
+    <h4>Contact Us</h4>
+    <p>Email: paradisetravel@gmail.com</p>
+    <p>Phone: (03) 9580 6311</p>
+</footer>
+
+</body>
+</html>
